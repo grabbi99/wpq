@@ -221,5 +221,11 @@
 	    $('.items-row').each(function() {
 	        $(this).children('.single-item').matchHeight();
 	    });
+
+	    //  Slick 
+	    $(".active-class").slick()
+
+
+
 	} );
 } )( jQuery );

@@ -256,6 +256,8 @@ function twentysixteen_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'twentysixteen-fonts', twentysixteen_fonts_url(), array(), null );
 
+	// Add Slick Carousel, used in the main stylesheet.
+	wp_enqueue_style( 'slick-car', get_template_directory_uri() . '/css/slick.css', array(), '1.6.0' );
 	// Add Font Awesome, used in the main stylesheet.
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.7.0' );
 
@@ -294,6 +296,8 @@ function twentysixteen_scripts() {
 		wp_enqueue_script( 'twentysixteen-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20160816' );
 	}
 
+	// Slick JS
+	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/js/slick.min.js', array( 'jquery' ), true );
 	// MatchHeight JS
 	wp_enqueue_script( 'matchheight-js', get_template_directory_uri() . '/js/jquery.matchHeight.js', array( 'jquery' ), true );
 	// Bootstrap JS
