@@ -55,9 +55,7 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="header-menus-aera">
-							<?php if ( has_nav_menu( 'primary' ) ) : ?>
-								<button id="menu-toggle" class="menu-toggle"><i class="genericon genericon-menu"></i></button>
-								
+							<?php if ( has_nav_menu( 'primary' ) ) : ?>							
 
 								<div id="site-header-menu" class="site-header-menu">
 									<?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -66,6 +64,7 @@
 												wp_nav_menu( array(
 													'theme_location' => 'primary',
 													'menu_class'     => 'primary-menu',
+													'menu_id'		 => 'nav'
 												 ) );
 											?>
 										</nav><!-- .main-navigation -->
@@ -73,6 +72,8 @@
 								</div><!-- .site-header-menu -->
 							<?php endif; ?>
 						</div>
+
+						<div class="mobile-menu"></div>
 					</div>
 				</div>
 			</div>
