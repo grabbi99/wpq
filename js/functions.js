@@ -223,7 +223,14 @@
 	    });
 
 	    //  Slick 
-	    $(".active-class").slick()
+	    $(".active-class").slick();
+
+		// Mobile Menu
+	    $('#nav').slicknav({
+	        label: '',
+	        duration: 700,
+	        prependTo: '.mobile-menu'
+	    });	    
 
 
 
