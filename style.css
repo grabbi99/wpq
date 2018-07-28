@@ -63,12 +63,6 @@ html {
 	-ms-text-size-adjust: 100%;
 }
 
-body{
-	font-family: 'Roboto Slab', serif;
-	font-size: 16px;
-	font-weight: 400;
-}
-
 img{
 	max-width: 100%;
 }
@@ -162,7 +156,160 @@ img{
 }
 
 
+/*--------------------------------------------------------------
+6.0 Forms
+--------------------------------------------------------------*/
 
+label {
+	color: #333;
+	display: block;
+	font-weight: 800;
+	margin-bottom: 0.5em;
+}
+
+fieldset {
+	margin-bottom: 1em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	background: #fff;
+	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+	border: 1px solid #bbb;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	display: block;
+	padding: 0.7em;
+	width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #222;
+	border-color: #333;
+}
+
+select {
+	border: 1px solid #bbb;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	height: 3em;
+	max-width: 100%;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	margin-right: 0.5em;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+	font-weight: 400;
+}
+
+input[type="button"],
+input[type="submit"] {
+	background-color: #222;
+	border: 0;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: 800;
+	line-height: 1;
+	padding: 1em 2em;
+	text-shadow: none;
+	-webkit-transition: background 0.2s;
+	transition: background 0.2s;
+}
+
+input + button,
+input + input[type="button"],
+input + input[type="submit"] {
+	padding: 0.75em 2em;
+}
+
+button.secondary,
+input[type="reset"],
+input[type="button"].secondary,
+input[type="reset"].secondary,
+input[type="submit"].secondary {
+	background-color: #ddd;
+	color: #222;
+}
+
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+	background: #767676;
+}
+
+button.secondary:hover,
+button.secondary:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="button"].secondary:hover,
+input[type="button"].secondary:focus,
+input[type="reset"].secondary:hover,
+input[type="reset"].secondary:focus,
+input[type="submit"].secondary:hover,
+input[type="submit"].secondary:focus {
+	background: #bbb;
+}
+
+/* Placeholder text color -- selectors need to be separate to work. */
+::-webkit-input-placeholder {
+	color: #333;
+}
+
+:-moz-placeholder {
+	color: #333;
+}
+
+::-moz-placeholder {
+	color: #333;
+	opacity: 1;
+	/* Since FF19 lowers the opacity of the placeholder by default */
+}
+
+:-ms-input-placeholder {
+	color: #333;
+}
 
 
 /**
@@ -383,26 +530,75 @@ img{
 	top: -5px;
 }
 
+
+/* Go Scroll To Top */
+
+.go-top {
+	position: fixed;
+	right: 30px;
+	bottom: 20px;
+	z-index: 999;
+	display: none;
+}
+
+.go-top span {
+	background-color: #4bc6ce;
+	color: #fff;
+	cursor: pointer;
+	float: right;
+	font-size: 30px;
+	font-weight: 400;
+	line-height: 30px;
+	padding: 5px 10px;
+}
+
+.go-top span:hover {
+	color: #fff;
+	background: #005770;
+}
+
+
+
 a, a:hover, a:focus{
 	text-decoration: none;
 }
-a:focus{
-	color: #fff;
+a:hover{
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
 }
+
 h1, h2, h3, h4, h5, h6{
 	color: #000;
 	margin: 0;
 }
-h2 {
-  font-size: 32px;
-  font-weight: 700;
-}
+
 
 
 
 /* Custom CSS */
 
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	color: #1e1e1e;
+	line-height: 1.4;
+}
 
+
+
+/* Menu */
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 9;
+}
+.sticky + .banner-area {
+	padding-top: 32px;
+}
 button.menu-toggle {
   display: none;
 }
@@ -433,17 +629,6 @@ button.menu-toggle {
 	color: #22980B;
 }
 
-/* Mobile Menu */
-button.menu-toggle {
-  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  border: medium none;
-}
-button.menu-toggle i {
-  font-size: 30px;
-}
-button.menu-toggle:hover i {
-  color: #043F81;
-}
 
 
 
@@ -457,7 +642,7 @@ button.menu-toggle:hover i {
   display: inline-block;
   font-size: 24px;
   font-weight: 700;
-  padding: 20px 40px;
+  padding: 10px 30px;
   text-transform: uppercase;
   -webkit-transition: all 0.4s ease 0s;
   -o-transition: all 0.4s ease 0s;
@@ -471,43 +656,71 @@ button.menu-toggle:hover i {
 
 
 
+
+
 /* Responsive */
-@media(max-width: 767px){
-.header-menus-aera::before, .header-menus-aera::after {
-  clear: both;
-  content: "";
-  display: table;
-}
-.header-menus-aera {
-  position: relative;
-}
 
-button.menu-toggle {
-  display: block;
-}
 
-.site-header-menu ul li {
-  float: none;
-}
-.site-header-menu ul li a {
-  padding: 5px 0;
-}
-.site-header-menu {
-  margin-top: 10px;
-  padding-left: 4px;
-  padding-right: 0;
-}
+/*
+ * Large devices (desktops, less than 1200px)
+ */
+
+@media (max-width: 1199.98px) {
 
 }
 
-@media (max-width: 600px){
+/*
+ * Medium devices (tablets, less than 992px)
+ */
 
+@media (max-width: 991.98px) {
 
-.logo img {
-  max-width: 100%;
 }
 
+
+/*
+ * Small devices (landscape phones, less than 768px)
+ */
+@media (max-width: 767.98px) {
+	.slicknav_menu {
+		display: block;
+	}
+	.slicknav_menu {
+		background: #4bc6ce;
+		margin-right: -15px;
+		margin-left: -15px;
+	}
+	.slicknav_btn {
+		margin: 5px 5px 6px;
+		text-decoration: none;
+		text-shadow: none;
+		border-radius: 0;
+		background-color: #eee;
+	}
+	.slicknav_menu .slicknav_icon-bar {
+		background-color: #222;
+	}
+	.slicknav_nav .slicknav_row, .slicknav_nav a {
+		text-transform: uppercase;
+		font-weight: 600;
+	}
+	.slicknav_nav a:hover {
+		background: transparent;
+		color: #000;
+	}
 }
+
+/*
+ * Extra small devices (portrait phones, less than 576px)
+ */
+
+@media (max-width: 575.98px) {
+
+}
+
+
+
+
 
 
 

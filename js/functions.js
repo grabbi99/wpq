@@ -217,6 +217,71 @@
 			$('.site-header-menu').slideToggle();
 		});
 
+        // Scroll To Top
+        $('body').prepend('<div class="go-top"><span id="top"><i class="fa fa-angle-up"></i></span></div>');
+
+        $(window).scroll(function(){
+            if($(window).scrollTop() > 500){
+                $('.go-top').fadeIn(600);
+            }else{
+                $('.go-top').fadeOut(600);
+            }
+        });
+        $('#top').click(function() {
+            $('html, body').animate({ scrollTop: 0 }, 800);
+            return false;
+        });
+
+        //smooth scrolling
+
+        if($('body').hasClass('admin-bar')) {
+
+            $('#header-menu a[href*="#"]:not([href="#"])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    var hd = $('.admin-bar').height();
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top - 82
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        }else{
+            $('#header-menu a[href*="#"]:not([href="#"])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    var hd = $('.admin-bar').height();
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top - 50
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        }
+
+        // Onepage Menu Active Class
+
+        $(document).ready(function () {
+
+            $('a[href^="#"]').on('click', function (e) {
+                e.preventDefault();
+                $(document).off("scroll");
+
+                $('a').each(function () {
+                    $(this).removeClass('active');
+                })
+                $(this).addClass('active');
+
+            });
+        });
+
+
 	    // Match Height
 	    $('.items-row').each(function() {
 	        $(this).children('.single-item').matchHeight();
@@ -236,3 +301,22 @@
 
 	} );
 } )( jQuery );
+
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("header-menu");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
+    }
+}
