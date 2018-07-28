@@ -248,6 +248,18 @@ function twentysixteen_javascript_detection() {
 add_action( 'wp_head', 'twentysixteen_javascript_detection', 0 );
 
 /**
+ * Override theme fonts
+ *
+ * @since Twenty Sixteen 1.0
+ */
+
+function twentysixteen_fonts_url() {
+    $fonts_url = 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600';
+    return $fonts_url;
+}
+
+
+/**
  * Enqueues scripts and styles.
  *
  * @since Twenty Sixteen 1.0
@@ -258,11 +270,15 @@ function twentysixteen_scripts() {
 
 	// Add Slick Carousel, used in the main stylesheet.
 	wp_enqueue_style( 'slick-car', get_template_directory_uri() . '/css/slick.css', array(), '1.6.0' );
+
+	// Add Slick Nav, used in the main stylesheet.
+	wp_enqueue_style( 'slick-nav', get_template_directory_uri() . '/css/slicknav.min.css', array(), '1.6.0' );
+
 	// Add Font Awesome, used in the main stylesheet.
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.7.0' );
 
 	// Add Bootstrap, used in the main stylesheet.
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.7.7' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '4.1.3' );
 
 	// Add Genericons, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
@@ -298,10 +314,18 @@ function twentysixteen_scripts() {
 
 	// Slick JS
 	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/js/slick.min.js', array( 'jquery' ), true );
+
+	// Slick JS
+	wp_enqueue_script( 'slicknav-js', get_template_directory_uri() . '/js/jquery.slicknav.min.js', array( 'jquery' ), true );
+
 	// MatchHeight JS
 	wp_enqueue_script( 'matchheight-js', get_template_directory_uri() . '/js/jquery.matchHeight.js', array( 'jquery' ), true );
+
+	// Popper JS
+	wp_enqueue_script( 'popper-js', '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', array( 'jquery' ), true );
+
 	// Bootstrap JS
-	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), true );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '4.1.3', true );
 
 	wp_enqueue_script( 'twentysixteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160816', true );
 
