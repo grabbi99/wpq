@@ -50,7 +50,7 @@
 <div class="header-menu">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-md-12">
                 <div class="header-menus-aera">
                     <?php if (has_nav_menu('primary')) : ?>
 
