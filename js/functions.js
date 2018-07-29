@@ -269,7 +269,7 @@
 
         $(document).ready(function () {
 
-            $('a[href^="#"]').on('click', function (e) {
+            $('#header-menu a[href^="#"]').on('click', function (e) {
                 e.preventDefault();
                 $(document).off("scroll");
 
@@ -302,21 +302,3 @@
 	} );
 } )( jQuery );
 
-
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
-
-// Get the navbar
-var navbar = document.getElementById("header-menu");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-    } else {
-        navbar.classList.remove("sticky");
-    }
-}
