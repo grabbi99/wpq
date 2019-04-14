@@ -9,30 +9,18 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<main id="main" class="site-main" role="main">
-
-						<section class="error-404 not-found">
-							<header class="page-header">
-								<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'twentysixteen' ); ?></h1>
-							</header><!-- .page-header -->
-
-							<div class="page-content">
-								<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentysixteen' ); ?></p>
-
-								<?php get_search_form(); ?>
-							</div><!-- .page-content -->
-						</section><!-- .error-404 -->
-
-					</main><!-- .site-main -->
-				</div>
-			</div>
-		</div>
-
-
-	</div><!-- .content-area -->
+<div class="error-404-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="error-404 not-found text-center">
+                    <h1>404!</h1>
+                    <h2>Page Not Found</h2>
+                    <a href="<?php echo site_url(); ?>">Back to homepage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php get_footer(); ?>
