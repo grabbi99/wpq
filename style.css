@@ -736,7 +736,13 @@ button.menu-toggle {
  */
 
 @media (max-width: 575.98px) {
-
+	/* 404 */
+	.error-404 {
+		padding: 50px 0;
+	}
+	.error-404 h1 {
+		font-size: 100px;
+	}
 }
 
 
