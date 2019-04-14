@@ -656,7 +656,28 @@ button.menu-toggle {
 
 
 
+/* 404 */
+.error-404 {
+	padding: 100px 0;
+}
+.error-404 h1 {
+	font-size: 200px;
+}
+.error-404 h2 {
 
+}
+.error-404 a {
+	background: #8fcd92;
+	color: #fff;
+	display: inline-block;
+	margin-top: 40px;
+	padding: 10px 30px;
+	text-transform: uppercase;
+}
+.error-404 a:hover {
+	background: #253769;
+	color: #fff;
+}
 
 /* Responsive */
 
