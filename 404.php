@@ -16,7 +16,7 @@ get_header(); ?>
                 <div class="error-404 not-found text-center">
                     <h1>404!</h1>
                     <h2>Page Not Found</h2>
-                    <a href="<?php echo site_url(); ?>">Back to homepage</a>
+                    <a href="<?php echo site_url(); ?>" class="btn mt-3">Back to homepage</a>
                 </div>
             </div>
         </div>
